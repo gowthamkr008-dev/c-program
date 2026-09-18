@@ -1,0 +1,218 @@
+Here are the basic built-in functions in C that students usually learn first:
+
+1. `printf()`
+Used to print output on the screen.
+```c
+printf("Hello World\n");
+```
+
+2. `scanf()`
+Used to read input from the user.
+```c
+int x;
+scanf("%d", &x);
+```
+
+3. `getchar()`
+Reads one character from input.
+```c
+char ch = getchar();
+```
+
+4. `putchar()`
+Prints one character.
+```c
+putchar('A');
+```
+
+5. `gets()`
+Reads a string from input. (Old function, not recommended)
+```c
+char name[20];
+gets(name);
+```
+
+6. `puts()`
+Prints a string and moves to next line.
+```c
+puts("Hello");
+```
+
+7. `strlen()`
+Returns the length of a string.
+```c
+char str[] = "hello";
+printf("%d", strlen(str));
+```
+
+8. `strcpy()`
+Copies one string into another.
+```c
+strcpy(dest, source);
+```
+
+9. `strcat()`
+Concatenates two strings.
+```c
+strcat(str1, str2);
+```
+
+10. `strcmp()`
+Compares two strings.
+```c
+strcmp(str1, str2);
+```
+
+11. `sqrt()`
+Finds square root.
+```c
+sqrt(25.0)
+```
+Need:
+```c
+#include <math.h>
+```
+
+12. `pow()`
+Power function.
+```c
+pow(2, 3); // 8
+```
+Need:
+```c
+#include <math.h>
+```
+
+13. `abs()`
+Returns absolute value of int.
+```c
+abs(-10);
+```
+Need:
+```c
+#include <stdlib.h>
+```
+
+14. `fabs()`
+Returns absolute value of double.
+```c
+fabs(-10.5);
+```
+Need:
+```c
+#include <math.h>
+```
+
+15. `malloc()`
+Allocates memory dynamically.
+```c
+int *p = malloc(sizeof(int));
+```
+Need:
+```c
+#include <stdlib.h>
+```
+
+16. `free()`
+Frees allocated memory.
+```c
+free(p);
+```
+
+17. `exit()`
+Stops program execution.
+```c
+exit(0);
+```
+Need:
+```c
+#include <stdlib.h>
+```
+
+18. `system()`
+Runs shell commands.
+```c
+system("cls");   // Windows
+system("clear"); // Linux
+```
+Need:
+```c
+#include <stdlib.h>
+```
+
+19. `rand()`
+Generates random number.
+```c
+rand();
+```
+Need:
+```c
+#include <stdlib.h>
+```
+
+20. `srand()`
+Seeds random number generator.
+```c
+srand(time(0));
+```
+Need:
+```c
+#include <stdlib.h>
+#include <time.h>
+```
+
+21. `ceil()`
+Rounds up.
+```c
+ceil(3.2);
+```
+
+22. `floor()`
+Rounds down.
+```c
+floor(3.8);
+```
+
+23. `main()`
+The starting function of every C program.
+```c
+int main() {
+    return 0;
+}
+```
+
+24. `return`
+Returns a value from a function.
+```c
+return 0;
+```
+
+Example using some basic functions:
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[20] = "C";
+    char copy[20];
+
+    printf("Hello\n");
+    puts("Welcome to C");
+
+    strcpy(copy, name);
+    printf("Copied string: %s\n", copy);
+
+    printf("Length: %d\n", strlen(name));
+
+    return 0;
+}
+```
+
+Important note:
+- Some functions like `gets()` are unsafe and not recommended in modern C.
+- Use `fgets()` instead.
+
+If you want, I can give:
+- “all basic functions in C with explanation”
+- “important C library functions category wise”
+- “functions used in beginner C programs only”

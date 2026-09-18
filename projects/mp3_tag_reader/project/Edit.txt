@@ -1,0 +1,126 @@
+#include"reader.h"
+
+void edit(char *tag,char *content){
+    // printf("%s\n",tag);
+    // printf("%s\n",content);
+    FILE *fp = fopen("backup.mp3","r");
+    FILE *cp = fopen("Sample.mp3","w");
+
+    
+
+    if(fp == NULL || cp == NULL){
+        perror("Error: ");
+        return ;
+    }
+
+
+    char buffer[13];
+    fread(buffer,1,10,fp);
+    printf("%s\n",buffer);
+    fwrite(buffer,1,10,cp);
+
+    char ctag[5];
+
+    if(strcmp(tag,"-a") == 0){
+        strcpy(ctag,"TIT2");
+        puts("-a");
+    }else if(strcmp(tag,"-t") == 0){
+        strcpy(ctag,"TPE1");
+        puts("-t");
+    }else if(strcmp(tag,"-A")==0){
+        strcpy(ctag, "TALB");
+        puts("-A");
+    }else if(strcmp(tag,"-y") == 0){
+         strcpy(ctag, "TYER");
+         puts("-y");
+    }else if(strcmp(tag,"-m") == 0){
+          strcpy(ctag, "TCON");
+          puts("-m");
+    }else if(strcmp(tag,"-c") == 0){
+           strcpy(ctag, "COMM");
+           puts("-c");
+    }else {
+        return;
+    }
+
+//     char ftag[5];
+//     fread(ftag,1,4,fp);
+//    fread(ftag,4,1,fp);
+//    printf("%s\n",ftag);
+
+      char header[5];//read tag
+      printf("\n\nbefore read tag : %s\n",header);
+      fread(header,4,1,fp);
+   
+      printf("After read tag : %s\n\n",header);
+
+   printf("comparition value : %d\n",strcmp(header,ctag));
+
+
+    if(strcmp(header, ctag)==0){
+        printf("For\n");
+    }else{
+       fwrite(ctag,1,4,cp);
+       
+       int size;//read size
+
+       fread(&size,sizeof(int),1,fp); 
+
+       printf("after read: %d\n",size);
+       
+       fwrite(&size,sizeof(int),1,cp);
+       numreverse(&size);
+
+       //
+        printf("after reverse: %d\n",size);
+        char data[4];
+        fread(data,3,1,fp);
+        fwrite(data,3,1,cp);
+
+        //read song content
+       char buffer[size];
+       fread(buffer,size-1,1,fp);
+       printf("Read buffer %s\n",buffer);
+       fwrite(buffer,size-1,1,cp);
+
+
+    }
+
+
+    fclose(fp);
+    fclose(cp);
+
+}
+
+/*
+
+-e 
+
+TIT2 =>Artist name            -a
+TPE1 => title /song name      -t
+TALB => Album                 -A
+TYER => year                  -y
+TCON  =>Content type          -m
+COMM => language              -c
+
+
+*/
+
+/*
+ask 2 i/p info
+another edit content
+
+
+in main function
+-a tpea artist name
+
+
+edit (tag , edit =>content)
+*/
+
+
+/*
+
+
+
+*/

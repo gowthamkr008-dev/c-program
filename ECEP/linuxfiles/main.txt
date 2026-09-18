@@ -1,0 +1,125 @@
+#include          → PREPROCESSOR
+<stdio.h>         → HEADER_FILE
+#include          → PREPROCESSOR
+<string.h>        → HEADER_FILE
+#include          → PREPROCESSOR
+<ctype.h>         → HEADER_FILE
+
+extern            → KEYWORD
+struct            → KEYWORD
+addressbook       → IDENTIFIER
+book              → IDENTIFIER
+;                 → SPECIAL_CHARACTER
+
+int               → KEYWORD
+valid_mail        → IDENTIFIER
+(                 → SPECIAL_CHARACTER
+char              → KEYWORD
+*                 → OPERATOR
+mail              → IDENTIFIER
+)                 → SPECIAL_CHARACTER
+{                 → SPECIAL_CHARACTER
+
+int               → KEYWORD
+i                 → IDENTIFIER
+=                 → OPERATOR
+0                 → CONSTANT (INTEGER)
+;                 → SPECIAL_CHARACTER
+
+int               → KEYWORD
+valid             → IDENTIFIER
+=                 → OPERATOR
+0                 → CONSTANT (INTEGER)
+;                 → SPECIAL_CHARACTER
+
+if                → KEYWORD
+(                 → SPECIAL_CHARACTER
+mail              → IDENTIFIER
+[                 → SPECIAL_CHARACTER
+0                 → CONSTANT (INTEGER)
+]                 → SPECIAL_CHARACTER
+==                → OPERATOR
+'@'               → CONSTANT (CHARACTER)
+||                → OPERATOR
+mail              → IDENTIFIER
+[                 → SPECIAL_CHARACTER
+0                 → CONSTANT (INTEGER)
+]                 → SPECIAL_CHARACTER
+==                → OPERATOR
+'.'               → CONSTANT (CHARACTER)
+)                 → SPECIAL_CHARACTER
+{                 → SPECIAL_CHARACTER
+
+return            → KEYWORD
+0                 → CONSTANT (INTEGER)
+;                 → SPECIAL_CHARACTER
+}                 → SPECIAL_CHARACTER
+
+valid             → IDENTIFIER
+=                 → OPERATOR
+0                 → CONSTANT (INTEGER)
+;                 → SPECIAL_CHARACTER
+
+while             → KEYWORD
+(                 → SPECIAL_CHARACTER
+mail              → IDENTIFIER
+[                 → SPECIAL_CHARACTER
+i                 → IDENTIFIER
+]                 → SPECIAL_CHARACTER
+!=                → OPERATOR
+'\0'              → CONSTANT (CHARACTER - NULL)
+)                 → SPECIAL_CHARACTER
+{                 → SPECIAL_CHARACTER
+
+if                → KEYWORD
+(                 → SPECIAL_CHARACTER
+islower           → IDENTIFIER (function call)
+(                 → SPECIAL_CHARACTER
+mail              → IDENTIFIER
+[                 → SPECIAL_CHARACTER
+i                 → IDENTIFIER
+]                 → SPECIAL_CHARACTER
+)                 → SPECIAL_CHARACTER
+||                → OPERATOR
+isdigit           → IDENTIFIER (function call)
+(                 → SPECIAL_CHARACTER
+mail              → IDENTIFIER
+[                 → SPECIAL_CHARACTER
+i                 → IDENTIFIER
+]                 → SPECIAL_CHARACTER
+)                 → SPECIAL_CHARACTER
+||                → OPERATOR
+mail              → IDENTIFIER
+[                 → SPECIAL_CHARACTER
+i                 → IDENTIFIER
+]                 → SPECIAL_CHARACTER
+==                → OPERATOR
+'@'               → CONSTANT (CHARACTER)
+||                → OPERATOR
+mail              → IDENTIFIER
+[                 → SPECIAL_CHARACTER
+i                 → IDENTIFIER
+]                 → SPECIAL_CHARACTER
+==                → OPERATOR
+'.'               → CONSTANT (CHARACTER)
+)                 → SPECIAL_CHARACTER
+{                 → SPECIAL_CHARACTER
+
+valid             → IDENTIFIER
+=                 → OPERATOR
+1                 → CONSTANT (INTEGER)
+;                 → SPECIAL_CHARACTER
+}                 → SPECIAL_CHARACTER
+
+else              → KEYWORD
+{                 → SPECIAL_CHARACTER
+
+return            → KEYWORD
+0                 → CONSTANT (INTEGER)
+;                 → SPECIAL_CHARACTER
+}                 → SPECIAL_CHARACTER
+
+i++               → OPERATOR (INCREMENT)
+;                 → SPECIAL_CHARACTER
+}                 → SPECIAL_CHARACTER
+// ... (rest continues)

@@ -1,0 +1,129 @@
+1. Write a program to find the maximum duplicate element in an array
+2. WAP to print N prime numbers.
+3. WAP to check if a number is strong or not.
+4. Print frequency of each element of array.
+5.Sort array in ascending/descending order using bubble sort. 
+. Shift all 0’s to the left side of the array keeping other’s order the same.  
+6. Find the size of the variable without using the sizeof() operator. 
+7.  Print frequency of each element of array. 
+8.Find possible pairs from the array whose sum is given by the user. 
+9. Print array without repetition. 
+10. Rotate array N times by right based on +ve entry from user
+11 .Swap two values without using a third variable. 
+12.Print the below pattern.     
+               1 2 3 4 5
+               5 4 3 2 1
+               1 2 3 4 5
+               5 4 3 2 1
+               1 2 3 4 5
+               
+13.WAP to print N prime numbers.
+14
+
+[Nested if, switch]
+
+1) Find the smallest of three numbers using nested if.
+
+2) Check whether a given year is leap year or not using nested if.
+
+3) Print the day of the week based on a number (0 - 7) using switch case.
+
+
+
+
+15
+
+1) WAP to print the below pattern hallow square
+
+*****
+*   *
+*   *
+*   *
+*****
+
+2) Palindrome number pyramid
+
+     1
+   212
+  32123
+ 4321234
+543212345
+
+3) Butterfly Pattern, n = 4
+
+*      *
+**    **
+***  ***
+********
+***  ***
+**    **
+*      *
+
+16 
+
+1) Print N natural number without using loop statement
+
+2) Print the below pattern.
+
+1 0 1 0 1
+
+ 1  0  1 0
+
+   1 0 1
+
+     1 0
+
+       1
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

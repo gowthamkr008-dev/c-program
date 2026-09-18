@@ -1,0 +1,278 @@
+#include<stdio.h>             PREPROCESS DERIVATIVIES
+#include<string.h>            PREPROCESS DERIVATIVIES
+#include<ctype.h>             PREPROCESS DERIVATIVIES
+extern                        RESERVED KEYWORD
+struct                        RESERVED KEYWORD
+addressbook                   IDENTIFIER
+book                          IDENTIFIER
+;                             SPECIAL SYMBOL
+int                           RESERVED KEYWORD
+main                          IDENTIFIER
+(                             SPECIAL SYMBOL
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+return                        RESERVED KEYWORD
+-                             OPERATOR
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+int                           RESERVED KEYWORD
+valid_mail                    IDENTIFIER
+(                             SPECIAL SYMBOL
+char                          RESERVED KEYWORD
+*                             OPERATOR
+mail                          IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+int                           RESERVED KEYWORD
+i                             IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+int                           RESERVED KEYWORD
+valid                         IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+@''                           CHARACTER LITERAL
+||                            IDENTIFIER
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+.''                           CHARACTER LITERAL
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+return                        RESERVED KEYWORD
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+while                         RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+!=                            IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+islower                       IDENTIFIER
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+)                             SPECIAL SYMBOL
+||                            IDENTIFIER
+isdigit                       IDENTIFIER
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+)                             SPECIAL SYMBOL
+||                            IDENTIFIER
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+@''                           CHARACTER LITERAL
+||                            IDENTIFIER
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+.''                           CHARACTER LITERAL
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+else                          RESERVED KEYWORD
+{                             SPECIAL SYMBOL
+return                        RESERVED KEYWORD
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+i                             IDENTIFIER
+++                            OPERATOR
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+==                            IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+i                             IDENTIFIER
+=                             OPERATOR
+,                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+while                         RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+!=                            IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+.''                           CHARACTER LITERAL
+&&                            IDENTIFIER
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
++                             OPERATOR
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+.''                           CHARACTER LITERAL
+)                             SPECIAL SYMBOL
+||                            IDENTIFIER
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+.''                           CHARACTER LITERAL
+&&                            IDENTIFIER
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
++                             OPERATOR
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+@''                           CHARACTER LITERAL
+)                             SPECIAL SYMBOL
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+return                        RESERVED KEYWORD
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
+]                             SPECIAL SYMBOL
+==                            IDENTIFIER
+@''                           CHARACTER LITERAL
+&&                            IDENTIFIER
+mail                          IDENTIFIER
+[                             SPECIAL SYMBOL
+i                             IDENTIFIER
++                             OPERATOR
+]                             SPECIAL SYMBOL
+!=                            IDENTIFIER
+.''                           CHARACTER LITERAL
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+i                             IDENTIFIER
+++                            OPERATOR
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+==                            IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+char                          RESERVED KEYWORD
+*                             OPERATOR
+ptr                           IDENTIFIER
+=                             OPERATOR
+strstr                        IDENTIFIER
+(                             SPECIAL SYMBOL
+mail                          IDENTIFIER
+,                             SPECIAL SYMBOL
+".com"                        LITERAL
+)                             SPECIAL SYMBOL
+;                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+ptr                           IDENTIFIER
+!=                            IDENTIFIER
+NULL                          IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+char                          RESERVED KEYWORD
+temp                          IDENTIFIER
+[                             SPECIAL SYMBOL
+]                             SPECIAL SYMBOL
+;                             SPECIAL SYMBOL
+strcpy                        IDENTIFIER
+(                             SPECIAL SYMBOL
+temp                          IDENTIFIER
+,                             SPECIAL SYMBOL
+ptr                           IDENTIFIER
+)                             SPECIAL SYMBOL
+;                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+strcmp                        IDENTIFIER
+(                             SPECIAL SYMBOL
+temp                          IDENTIFIER
+,                             SPECIAL SYMBOL
+".com"                        LITERAL
+)                             SPECIAL SYMBOL
+==                            IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+=                             OPERATOR
+x123                          IDENTIFIER
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+else                          RESERVED KEYWORD
+{                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+else                          RESERVED KEYWORD
+{                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+=                             OPERATOR
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+if                            RESERVED KEYWORD
+(                             SPECIAL SYMBOL
+valid                         IDENTIFIER
+==                            IDENTIFIER
+)                             SPECIAL SYMBOL
+{                             SPECIAL SYMBOL
+return                        RESERVED KEYWORD
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+else                          RESERVED KEYWORD
+{                             SPECIAL SYMBOL
+return                        RESERVED KEYWORD
+;                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL
+}                             SPECIAL SYMBOL

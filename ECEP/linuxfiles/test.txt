@@ -1,0 +1,310 @@
+#include<stdio.h>                                 PREPROCESS DERIVATIVIES
+#include<string.h>                                 PREPROCESS DERIVATIVIES
+#include<ctype.h>                                 PREPROCESS DERIVATIVIES
+extern                               RESERVED KEYWORD
+struct                               RESERVED KEYWORD
+addressbook                               VARIABLE
+book                               VARIABLE
+;                               SPECIALCHARACTERS
+
+int                               RESERVED KEYWORD
+valid                               VARIABLE
+mail                               VARIABLE
+(                               SPECIALCHARACTERS
+char                               RESERVED KEYWORD
+*                               OPERATOR 
+mail                               VARIABLE
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+int                               RESERVED KEYWORD
+i                               VARIABLE
+=                               OPERATOR 
+0                               LITERAL
+
+int                               RESERVED KEYWORD
+valid                               VARIABLE
+=                               OPERATOR 
+0                               LITERAL
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+0                               LITERAL
+=                               OPERATOR 
+|                               OPERATOR 
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+0                               LITERAL
+=                               OPERATOR 
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+return                               RESERVED KEYWORD
+0                               LITERAL
+
+}                               SPECIALCHARACTERS
+
+valid                               VARIABLE
+=                               OPERATOR 
+0                               LITERAL
+
+while                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+!                               OPERATOR 
+0                               LITERAL
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+islower                               VARIABLE
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+)                               SPECIALCHARACTERS
+|                               OPERATOR 
+isdigit                               VARIABLE
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+)                               SPECIALCHARACTERS
+|                               OPERATOR 
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+=                               OPERATOR 
+|                               OPERATOR 
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+=                               OPERATOR 
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+valid                               VARIABLE
+=                               OPERATOR 
+1                               LITERAL
+
+}                               SPECIALCHARACTERS
+else                               RESERVED KEYWORD
+{                               SPECIALCHARACTERS
+
+return                               RESERVED KEYWORD
+0                               LITERAL
+
+}                               SPECIALCHARACTERS
+
+i                               VARIABLE
++                               OPERATOR 
+;                               SPECIALCHARACTERS
+
+}                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+valid                               VARIABLE
+=                               OPERATOR 
+1                               LITERAL
+{                               SPECIALCHARACTERS
+
+i                               VARIABLE
+=                               OPERATOR 
+0                               LITERAL
+valid                               VARIABLE
+=                               OPERATOR 
+0                               LITERAL
+
+while                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+!                               OPERATOR 
+0                               LITERAL
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+=                               OPERATOR 
+&                               OPERATOR 
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
++                               OPERATOR 
+1                               LITERAL
+=                               OPERATOR 
+)                               SPECIALCHARACTERS
+|                               OPERATOR 
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+=                               OPERATOR 
+&                               OPERATOR 
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
++                               OPERATOR 
+1                               LITERAL
+=                               OPERATOR 
+)                               SPECIALCHARACTERS
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+return                               RESERVED KEYWORD
+0                               LITERAL
+
+}                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
+]                               SPECIALCHARACTERS
+=                               OPERATOR 
+&                               OPERATOR 
+mail                               VARIABLE
+[                               SPECIALCHARACTERS
+i                               VARIABLE
++                               OPERATOR 
+1                               LITERAL
+!                               OPERATOR 
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+
+valid                               VARIABLE
+=                               OPERATOR 
+1                               LITERAL
+
+}                               SPECIALCHARACTERS
+
+i                               VARIABLE
++                               OPERATOR 
+;                               SPECIALCHARACTERS
+
+}                               SPECIALCHARACTERS
+
+}                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+valid                               VARIABLE
+=                               OPERATOR 
+1                               LITERAL
+{                               SPECIALCHARACTERS
+
+char                               RESERVED KEYWORD
+*                               OPERATOR 
+ptr                               VARIABLE
+=                               OPERATOR 
+strstr                               VARIABLE
+(                               SPECIALCHARACTERS
+mail                               VARIABLE
+,                               SPECIALCHARACTERS
+".com"                               LITERAL
+)                               SPECIALCHARACTERS
+;                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+ptr                               VARIABLE
+!                               OPERATOR 
+NULL                               VARIABLE
+)                               SPECIALCHARACTERS
+{                               SPECIALCHARACTERS
+
+char                               RESERVED KEYWORD
+temp                               VARIABLE
+[                               SPECIALCHARACTERS
+20                               LITERAL
+;                               SPECIALCHARACTERS
+
+strcpy                               VARIABLE
+(                               SPECIALCHARACTERS
+temp                               VARIABLE
+,                               SPECIALCHARACTERS
+ptr                               VARIABLE
+)                               SPECIALCHARACTERS
+;                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+strcmp                               VARIABLE
+(                               SPECIALCHARACTERS
+temp                               VARIABLE
+,                               SPECIALCHARACTERS
+".com"                               LITERAL
+)                               SPECIALCHARACTERS
+=                               OPERATOR 
+0                               LITERAL
+{                               SPECIALCHARACTERS
+
+valid                               VARIABLE
+=                               OPERATOR 
+1                               LITERAL
+
+}                               SPECIALCHARACTERS
+else                               RESERVED KEYWORD
+{                               SPECIALCHARACTERS
+
+valid                               VARIABLE
+=                               OPERATOR 
+0                               LITERAL
+
+}                               SPECIALCHARACTERS
+
+}                               SPECIALCHARACTERS
+else                               RESERVED KEYWORD
+{                               SPECIALCHARACTERS
+
+valid                               VARIABLE
+=                               OPERATOR 
+0                               LITERAL
+
+}                               SPECIALCHARACTERS
+
+}                               SPECIALCHARACTERS
+
+if                               RESERVED KEYWORD
+(                               SPECIALCHARACTERS
+valid                               VARIABLE
+=                               OPERATOR 
+1                               LITERAL
+{                               SPECIALCHARACTERS
+
+return                               RESERVED KEYWORD
+1                               LITERAL
+
+}                               SPECIALCHARACTERS
+else                               RESERVED KEYWORD
+{                               SPECIALCHARACTERS
+
+return                               RESERVED KEYWORD
+0                               LITERAL
+
+}                               SPECIALCHARACTERS
+
+}                               SPECIALCHARACTERS
+

@@ -1,0 +1,36 @@
+%d  : signed int          = -42
+%i  : signed int          = -42
+%u  : unsigned int        = 42
+%o  : unsigned octal      = 52
+%x  : unsigned hex lower  = 2a
+%X  : unsigned hex upper  = 2A
+%f  : float / double     = 2.718282
+%F  : float / double     = 2.718282
+%e  : scientific lower   = 2.718282e+00
+%E  : scientific upper   = 2.718282E+00
+%g  : shorter of %f/%e = 2.71828
+%G  : shorter of %F/%E = 2.71828
+%a  : hex float lower    = 0x1.5bf0a8b145769p+1
+%A  : hex float upper    = 0X1.5BF0A8B145769P+1
+%c  : character         = A
+%s  : string            = Hello, format specifiers!
+%p  : pointer           = 0x7ffd38f79c38
+%%  : literal percent  = %
+%hd : short int         = -32000
+%hu : unsigned short    = 65000
+%ld : long int          = -42000000000
+%lu : unsigned long     = 42000000000
+%lld: long long int     = -4200000000000000000
+%llu: unsigned long long= 4200000000000000000
+%zd : size_t            = 42
+%td : ptrdiff_t         = -1
+%jd : intmax_t          = -4200000000000000000
+%ju : uintmax_t         = 4200000000000000000
+field width/precision examples:
+  %10d =        -42
+  %.5f = 2.71828
+  %10.3e =  2.718e+00
+  %-10s = Hello, format specifiers!
+%n  : bytes written so far = intermediate output
+20
+Bytes written reported by %n may vary   = 0

@@ -1,0 +1,97 @@
+#include <stdio.h>        -> PREPROCESSOR DIRECTIVES
+int                       -> KEYWORDS
+main                      -> IDENTIFIERS
+(                         -> SPECIAL SYMBOLS
+)                         -> SPECIAL SYMBOLS
+{                         -> SPECIAL SYMBOLS
+int                       -> KEYWORDS
+a                         -> IDENTIFIERS
+=                         -> OPERATORS
+10                        -> CONSTANT
+,                         -> SPECIAL SYMBOLS
+b                         -> IDENTIFIERS
+=                         -> OPERATORS
+20                        -> CONSTANT
+;                         -> SPECIAL SYMBOLS
+float                     -> KEYWORDS
+result                    -> IDENTIFIERS
+=                         -> OPERATORS
+0.0                       -> CONSTANT
+;                         -> SPECIAL SYMBOLS
+result                    -> IDENTIFIERS
+=                         -> OPERATORS
+a                         -> IDENTIFIERS
++                         -> OPERATORS
+b                         -> IDENTIFIERS
+*                         -> OPERATORS
+(                         -> SPECIAL SYMBOLS
+a                         -> IDENTIFIERS
+-                         -> OPERATORS
+b                         -> IDENTIFIERS
+)                         -> SPECIAL SYMBOLS
+/                         -> OPERATORS
+2                         -> CONSTANT
+;                         -> SPECIAL SYMBOLS
+if                        -> KEYWORDS
+(                         -> SPECIAL SYMBOLS
+result                    -> IDENTIFIERS
+>                         -> OPERATORS
+15                        -> CONSTANT
+&&                        -> OPERATORS
+a                         -> IDENTIFIERS
+!=                        -> OPERATORS
+b                         -> IDENTIFIERS
+)                         -> SPECIAL SYMBOLS
+{                         -> SPECIAL SYMBOLS
+printf                    -> IDENTIFIERS
+(                         -> SPECIAL SYMBOLS
+"Result is greater\n"     -> STRINGS
+)                         -> SPECIAL SYMBOLS
+;                         -> SPECIAL SYMBOLS
+}                         -> SPECIAL SYMBOLS
+else                      -> KEYWORDS
+{                         -> SPECIAL SYMBOLS
+printf                    -> IDENTIFIERS
+(                         -> SPECIAL SYMBOLS
+"Result is smaller or equal\n" -> STRINGS
+)                         -> SPECIAL SYMBOLS
+;                         -> SPECIAL SYMBOLS
+}                         -> SPECIAL SYMBOLS
+for                       -> KEYWORDS
+(                         -> SPECIAL SYMBOLS
+int                       -> KEYWORDS
+i                         -> IDENTIFIERS
+=                         -> OPERATORS
+0                         -> CONSTANT
+;                         -> SPECIAL SYMBOLS
+i                         -> IDENTIFIERS
+<                         -> OPERATORS
+5                         -> CONSTANT
+;                         -> SPECIAL SYMBOLS
+i                         -> IDENTIFIERS
+++                        -> OPERATORS
+)                         -> SPECIAL SYMBOLS
+{                         -> SPECIAL SYMBOLS
+a                         -> IDENTIFIERS
+++                        -> OPERATORS
+;                         -> SPECIAL SYMBOLS
+}                         -> SPECIAL SYMBOLS
+char                      -> KEYWORDS
+a                         -> IDENTIFIERS
+=                         -> OPERATORS
+'A'                       -> CHARACTERS
+;                         -> SPECIAL SYMBOLS
+char                      -> KEYWORDS
+b                         -> IDENTIFIERS
+=                         -> OPERATORS
+'\n'                      -> CHARACTERS
+;                         -> SPECIAL SYMBOLS
+char                      -> KEYWORDS
+c                         -> IDENTIFIERS
+=                         -> OPERATORS
+'Z'                       -> CHARACTERS
+;                         -> SPECIAL SYMBOLS
+return                    -> KEYWORDS
+0                         -> CONSTANT
+;                         -> SPECIAL SYMBOLS
+}                         -> SPECIAL SYMBOLS

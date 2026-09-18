@@ -1,0 +1,18 @@
+recursive
+function calling itself
+main(){
+foo()
+}
+foo(){
+foo()
+}
+it is not a infinite recursion
+end of time stackmemory if full stack overflow is  exhausted
+
+in recursive function should not using the loop
+
+return value iscreated go where function call
+seprate memory allocate in paramente in function
+
+
+

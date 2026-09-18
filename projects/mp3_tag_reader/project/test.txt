@@ -1,0 +1,32 @@
+
+
+#include<stdio.h>
+int main(){
+    int num;
+    scanf("%d",&num);
+
+  int *ptr;
+  ptr =&num;
+    
+printf("Before %d\n",num);
+
+  unsigned char * byte = (unsigned char *)ptr;
+  int left = 0, right = sizeof(int)-1;
+    unsigned char temp;
+    while (left < right) {
+        temp = byte[left];
+        byte[left] = byte[right];
+        byte[right] = temp;
+        right--;
+        left++;
+    }
+    printf("After %d\n",num);
+
+
+  }
+
+
+/*
+ after read : 788529152
+after convert : 47
+*/
