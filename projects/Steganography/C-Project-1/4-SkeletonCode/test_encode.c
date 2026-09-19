@@ -18,7 +18,16 @@ int main( int arg,char *argv[])
             
             printf("source file name %s\n",encInfo.src_image_fname);
             printf("secrate file name %s\n",encInfo.secret_fname);
-            printf("output file name %s\n",encInfo.stego_image_fname);
+            printf("output file name %s\n\n",encInfo.stego_image_fname);
+            if(open_files(&encInfo) == e_success){
+                printf("Succesfully File opened ✅\n");
+                printf("Do Encoding ✅\n");
+            do_encoding(&encInfo);
+            }else{
+                printf("Fail to decode❌\n");
+            }
+
+
         }else{
             printf("Invalid file\n");
             return -1;
