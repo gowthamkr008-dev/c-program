@@ -81,6 +81,9 @@ Status encode_data_to_image(char *data, int size, FILE *fptr_src_image, FILE *fp
 /* Encode a byte into LSB of image data array */
 Status encode_byte_to_lsb(char data, char *image_buffer);
 
+/* Encode a size into LSB of image data array */
+Status encode_size_to_lsb(int data, char *image_buffer);
+
 /* Copy remaining image bytes from src to stego image after encoding */
 Status copy_remaining_img_data(FILE *fptr_src, FILE *fptr_dest);
 
