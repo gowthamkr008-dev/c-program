@@ -1,3 +1,4 @@
+/*
 read and validate
 
 open __FILE_
@@ -25,6 +26,8 @@ fetch lsb and frame a char
 return string
 
 */
+
+/*
 if {string is "#*" continue}
 else {stop the program not a present any secrate data}
 
@@ -53,3 +56,6 @@ compare secrate.txt and decode.txt
 
 
 
+
+
+*/
