@@ -22,9 +22,15 @@ int main( int arg,char *argv[])
             if(open_files(&encInfo) == e_success){
                 printf("Succesfully File opened ✅\n");
                 printf("Do Encoding ✅\n");
-            do_encoding(&encInfo);
+                if(do_encoding(&encInfo) == e_success){
+                    puts("Enocding completed ✅");
+                }else{
+                    puts("fail to decode ❌");
+                    return -1;
+                }
             }else{
-                printf("Fail to decode❌\n");
+                printf("Invalid file");
+                return -1;
             }
 
 
