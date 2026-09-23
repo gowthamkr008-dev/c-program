@@ -7,72 +7,42 @@
 typedef unsigned int  uint;
 
 Status check_capacity(EncodeInfo *encInfo){
-
-  //size of magic string
-  /* find the size of maghic string*/
- int mgsize = strlen( MAGIC_STRING) * 8; 
-  printf("Size of magic string : %d\n",mgsize);
-
-  /* find secrete file extension */
-  /* always 32 because it is integer 32 bit to fetech 8 byte of data */
-  /* sefs = secrate file extension size */
-  int sfes = 32;
-  char *secfile = strstr(encInfo->secret_fname,".");
-  /* sfe = secrate file extension */
-  int sfe = strlen(secfile)*8;
-  printf("%d %d \n",sfes,sfe);
   
-  
-  /* find size of secrete data*/
+  /*number of magic string*/
+  int magicstr = strlen(MAGIC_STRING) * 8; /*  require 16 byte*/
+
+  char *ext = strrchr(encInfo->secret_fname,'.');
+
+  /* length of ectension*/
+  int sec_fil_ext = 32 ;  /* require 32 byte*/
+
+  /* char in extension*/
+  int num_of_char_ext = strlen(encInfo->secret_fname) * 8; /* require 32 byte */
+
   fseek(encInfo->fptr_secret,0,SEEK_END);
-  /* byte for file size always  */
-  /* sds = secrate data size */
-  int sds = 32; 
 
-  /* secrete data */
-   uint sd = ftell(encInfo->fptr_secret) * 8;
-  printf("sec file data : %d\n",sd);
+  int num_of_char_in_file = 32; /* require 32 byte*/
 
-  fseek(encInfo->fptr_secret,0,SEEK_SET);
+  /* number of char in secrate file */
+  int sec_data = ftell(encInfo->fptr_secret) * 8 ; /* 25 char 200 byte of data */
 
-
-  uint secfilesize = mgsize + sfes + sfe + sds +sd;
-
-    printf("Total size: %d\n",secfilesize);
-
-    fseek(encInfo->fptr_src_image,0,SEEK_END);
-    /* find the file bmp size of and subtract 54 byte of data because it headre file can't change */
-    long unsigned int bmpfilesize  = ftell(encInfo->fptr_src_image) - 54;
-
-    printf("%ld\n",bmpfilesize);
-
-    if(bmpfilesize > secfilesize){
-      puts("enough memory is present");
-    }else{
-      puts("Not enough memory to store data");
-      return e_failure;
-    }
-
+  rewind(encInfo->fptr_secret);
   
+  int sec_fil_tot_size = magicstr + sec_fil_ext + num_of_char_ext + num_of_char_in_file + sec_data;
 
+  printf("require size %d\n",sec_fil_tot_size);
 
+  fseek(encInfo->fptr_src_image,0,SEEK_END);
 
+  uint bmp_file_size = ftell(encInfo->fptr_src_image);
 
+  printf("size of image file %d\n",bmp_file_size);
 
-
-
-
+  if(sec_fil_tot_size < bmp_file_size){
+    puts("enough capacity availabe ✅");
+  }else{
+    return e_failure;
+  }
+  
   return e_success;
 }
-
-/*
-seprate extension
-
-  char srt[] = "file.txt";
-
-  char *ext;
-  ext = strstr(srt,".");
-  stelen(ext) //find exten file size
-  printf("%s",ext);
-
-*/

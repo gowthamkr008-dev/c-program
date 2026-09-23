@@ -18,6 +18,7 @@ Status do_encoding(EncodeInfo *encInfo){
     puts("capacity checked✅");
   }else{
     puts("invalid capacity❌");
+    return e_failure;
   }
 
 
