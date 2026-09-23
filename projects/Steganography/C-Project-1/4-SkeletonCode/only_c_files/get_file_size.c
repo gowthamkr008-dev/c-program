@@ -11,7 +11,7 @@ uint get_file_size(FILE *fptr,EncodeInfo *encInfo){
    int sec_data = ftell(fptr);
    rewind(fptr);
 
-   printf("size of sec file %d\n",sec_data);
+   printf("size of secret file %d\n",sec_data);
    return sec_data;
 
 

@@ -7,10 +7,6 @@
 typedef unsigned int  uint;
 
 Status check_capacity(EncodeInfo *encInfo){
-
-
-
-
   /* bmp file image capacity */
     encInfo->image_capacity = get_image_size_for_bmp(encInfo->fptr_src_image);
 

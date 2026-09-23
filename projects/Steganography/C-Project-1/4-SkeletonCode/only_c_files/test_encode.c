@@ -15,12 +15,12 @@ int main( int arg,char *argv[])
     if( check_operation_type(argv) == e_encode){
         printf("Start Encoding\n");
         if(read_and_validate_encode_args(argv,&encInfo) ==e_success){
-            
+            /*
             printf("source file name %s\n",encInfo.src_image_fname);
             printf("secrate file name %s\n",encInfo.secret_fname);
             printf("output file name %s\n\n",encInfo.stego_image_fname);
+            */
             if(open_files(&encInfo) == e_success){
-                printf("Succesfully File opened ✅\n");
                 printf("Do Encoding ✅\n");
                 if(do_encoding(&encInfo) == e_success){
                     puts("Enocding completed ✅");
