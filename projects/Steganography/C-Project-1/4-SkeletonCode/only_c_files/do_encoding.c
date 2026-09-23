@@ -17,6 +17,23 @@ Status do_encoding(EncodeInfo *encInfo){
   }
 
 
+/*                     source file                secrete file*/
+printf("orgimage name %s\nsecret msg image %s\n",encInfo->src_image_fname,encInfo->secret_fname);
+  if(copy_bmp_header(encInfo->fptr_src_image,encInfo->fptr_stego_image)  == e_success){
+}else{
+  puts("Copied failed\n");
+  return e_failure;
+}
+
+  /*
+  src_image_fname
+  secret_fname
+  extn_secret_file
+  image_capacity
+  size_secret_file
+  */
+  
+
   /*
   printf("\n\n%s\n",encInfo->src_image_fname);
   printf("%s\n",encInfo->secret_fname);

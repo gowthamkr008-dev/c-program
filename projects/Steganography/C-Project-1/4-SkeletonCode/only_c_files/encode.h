@@ -57,10 +57,10 @@ Status check_capacity(EncodeInfo *encInfo);
 /* Get image size ✅ */
 uint get_image_size_for_bmp(FILE *fptr_image);
 
-/* Get file size */
+/* Get file size ✅ */
 uint get_file_size(FILE *fptr,EncodeInfo *encInfo);
 
-/* Copy bmp image header */
+/* Copy bmp image header ✅ */
 Status copy_bmp_header(FILE *fptr_src_image, FILE *fptr_dest_image);
 
 /* Store Magic String */
