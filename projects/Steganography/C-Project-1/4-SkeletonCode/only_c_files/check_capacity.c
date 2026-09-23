@@ -39,6 +39,20 @@ Status check_capacity(EncodeInfo *encInfo){
   uint secfilesize = mgsize + sfes + sfe + sds +sd;
 
     printf("Total size: %d\n",secfilesize);
+
+    fseek(encInfo->fptr_src_image,0,SEEK_END);
+    /* find the file bmp size of and subtract 54 byte of data because it headre file can't change */
+    long unsigned int bmpfilesize  = ftell(encInfo->fptr_src_image) - 54;
+
+    printf("%ld\n",bmpfilesize);
+
+    if(bmpfilesize > secfilesize){
+      puts("enough memory is present");
+    }else{
+      puts("Not enough memory to store data");
+      return e_failure;
+    }
+
   
 
 
