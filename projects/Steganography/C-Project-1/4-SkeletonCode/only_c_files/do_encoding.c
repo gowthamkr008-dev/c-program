@@ -22,5 +22,13 @@ Status do_encoding(EncodeInfo *encInfo){
   }
 
 
+  
+  printf("\n\n%s\n",encInfo->src_image_fname);
+  printf("%s\n",encInfo->secret_fname);
+  printf("%s\n",encInfo->extn_secret_file);
+  printf("image size %d\n",encInfo->image_capacity);
+  printf("data size %ld\n\n",encInfo->size_secret_file);
+
+
   return e_success;
 }

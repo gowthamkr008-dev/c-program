@@ -17,47 +17,26 @@ Status check_capacity(EncodeInfo *encInfo){
 
 
     
-  int mg = strlen(MAGIC_STRING) * 8 ;
+  int mg = strlen(MAGIC_STRING) ;
 
   char *ext = strrchr(encInfo->secret_fname,'.');
   strcpy(encInfo->extn_secret_file,ext);
-  int size_of_ext = 32;
-  int ext_char = strlen(  encInfo->extn_secret_file) * 8 ;
+  int size_of_ext = sizeof(int);
+  int ext_char = strlen(  encInfo->extn_secret_file);
 
-  int size_of_data = 32;
+  int size_of_data =sizeof(int);
 
 
 
-  encInfo->size_secret_file   = get_file_size(encInfo->fptr_secret,encInfo) * 8;
+  encInfo->size_secret_file   = get_file_size(encInfo->fptr_secret,encInfo);
 
-  uint total_sec_size = mg + size_of_ext + ext_char +size_of_data +encInfo->size_secret_file;
+  uint total_sec_size =( mg + size_of_ext + ext_char +size_of_data +encInfo->size_secret_file ) * 8;
   printf("total size %d\nimage size %d\n",total_sec_size,encInfo->image_capacity);
 
-
-
-  /*
-  
-    char *src_image_fname; //✅
-    FILE *fptr_src_image;//✅
-    uint image_capacity;
-    uint bits_per_pixel;//✅
-    char image_data[MAX_IMAGE_BUF_SIZE];//✅
-
-    char *secret_fname;//✅
-    FILE *fptr_secret;//✅
-    char extn_secret_file[MAX_FILE_SUFFIX];
-    char secret_data[MAX_SECRET_BUF_SIZE];  
-    long size_secret_file;
-
-  */
-
-   printf("\n\n%s\n",encInfo->src_image_fname);
-  printf("%s\n",encInfo->secret_fname);
-    printf("%s\n",encInfo->extn_secret_file);
-      printf("%s\n",encInfo->secret_data);
-
-      printf("image size %d\n",encInfo->image_capacity);
-      printf("data size %ld\n",encInfo->size_secret_file);
+  if(encInfo->size_secret_file  <= 0){
+    printf("not present any secret data\n");
+    return e_failure;
+  }
 
   if(encInfo->image_capacity > total_sec_size){
     puts("Enough capacity available✅\n");
