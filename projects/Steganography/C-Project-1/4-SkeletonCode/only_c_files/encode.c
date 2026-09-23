@@ -12,6 +12,7 @@
  */
 uint get_image_size_for_bmp(FILE *fptr_image)
 {
+    printf("\n");
     uint width, height;
     // Seek to 18th byte
     fseek(fptr_image, 18, SEEK_SET);
@@ -26,6 +27,7 @@ uint get_image_size_for_bmp(FILE *fptr_image)
 
     // Return image capacity
     return width * height * 3;
+        printf("\n");
 }
 
 /* 

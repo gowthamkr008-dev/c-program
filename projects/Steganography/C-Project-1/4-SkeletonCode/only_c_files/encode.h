@@ -17,22 +17,22 @@
 typedef struct _EncodeInfo
 {
     /* Source Image info */
-    char *src_image_fname;
-    FILE *fptr_src_image;
-    uint image_capacity;
-    uint bits_per_pixel;
-    char image_data[MAX_IMAGE_BUF_SIZE];
+    char *src_image_fname; //✅
+    FILE *fptr_src_image;//✅
+    uint image_capacity;/*✅*/
+    uint bits_per_pixel;//✅
+    char image_data[MAX_IMAGE_BUF_SIZE];/* use during encoding */
 
     /* Secret File Info */
-    char *secret_fname;
-    FILE *fptr_secret;
-    char extn_secret_file[MAX_FILE_SUFFIX];
-    char secret_data[MAX_SECRET_BUF_SIZE];
-    long size_secret_file;
+    char *secret_fname;//✅
+    FILE *fptr_secret;//✅
+    char extn_secret_file[MAX_FILE_SUFFIX];/*   .txt */ //✅
+    char secret_data[MAX_SECRET_BUF_SIZE];  /* use during encoding */
+    long size_secret_file; /* number of char in sec file  */ //✅
 
     /* Stego Image Info */
-    char *stego_image_fname;
-    FILE *fptr_stego_image;
+    char *stego_image_fname; //✅
+    FILE *fptr_stego_image; //✅
 
 } EncodeInfo;
 
@@ -54,11 +54,11 @@ Status open_files(EncodeInfo *encInfo);
 /* check capacity ✅ */
 Status check_capacity(EncodeInfo *encInfo);
 
-/* Get image size */
+/* Get image size ✅ */
 uint get_image_size_for_bmp(FILE *fptr_image);
 
 /* Get file size */
-uint get_file_size(FILE *fptr);
+uint get_file_size(FILE *fptr,EncodeInfo *encInfo);
 
 /* Copy bmp image header */
 Status copy_bmp_header(FILE *fptr_src_image, FILE *fptr_dest_image);
