@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 #include "encode.h"
 #include "types.h"
+#include "common.h"
 
 Status do_encoding(EncodeInfo *encInfo){
   /* copy first 54 byte*/
@@ -25,22 +27,30 @@ printf("orgimage name %s\nsecret msg image %s\n",encInfo->src_image_fname,encInf
   return e_failure;
 }
 
-
-
-if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) == e_success ){
-  printf("Reamining data copied\n");
+/*encode magic string */
+char magic_string[5];
+strcpy(magic_string,MAGIC_STRING);
+if(encode_magic_string(magic_string, encInfo) == e_success){
+ puts("Magic sting encoded✅");
 }else{
-  printf("Error in remaining data copy\n");
-  return e_failure;
+  puts("Failed encoded magic string❌");
 }
-  /*
-  src_image_fname
-  secret_fname
-  extn_secret_file
-  image_capacity
-  size_secret_file
-  */
+
+
+
+
+// if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) == e_success ){
+//   printf("Reamining data copied\n");
+// }else{
+//   printf("Error in remaining data copy\n");
+//   return e_failure;
+// }
+ 
   
+
+  return e_success;
+}
+
 
   /*
   printf("\n\n%s\n",encInfo->src_image_fname);
@@ -50,6 +60,3 @@ if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) ==
   printf("data size %ld\n\n",encInfo->size_secret_file);
 
 */
-
-  return e_success;
-}

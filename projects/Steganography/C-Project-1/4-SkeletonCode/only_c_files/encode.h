@@ -21,7 +21,7 @@ typedef struct _EncodeInfo
     FILE *fptr_src_image;//✅
     uint image_capacity;/*✅*/
     uint bits_per_pixel;//✅
-    char image_data[MAX_IMAGE_BUF_SIZE];/* use during encoding */
+    char image_data[MAX_IMAGE_BUF_SIZE]; /* use during encoding */
 
     /* Secret File Info */
     char *secret_fname;//✅
@@ -63,7 +63,7 @@ uint get_file_size(FILE *fptr,EncodeInfo *encInfo);
 /* Copy bmp image header ✅ */
 Status copy_bmp_header(FILE *fptr_src_image, FILE *fptr_dest_image);
 
-/* Store Magic String */
+/* Store Magic String ✅*/
 Status encode_magic_string(const char *magic_string, EncodeInfo *encInfo);
 
 /* Encode secret file extenstion */
@@ -78,10 +78,12 @@ Status encode_secret_file_data(EncodeInfo *encInfo);
 /* Encode function, which does the real encoding */
 Status encode_data_to_image(char *data, int size, FILE *fptr_src_image, FILE *fptr_stego_image);
 
-/* Encode a byte into LSB of image data array */
+/* Encode a byte into LSB of image data array */ 
+/* use to encoded char ✅ */
 Status encode_byte_to_lsb(char data, char *image_buffer);
 
 /* Encode a size into LSB of image data array */
+/* use to encode integer */
 Status encode_size_to_lsb(int data, char *image_buffer);
 
 /* Copy remaining image bytes from src to stego image after encoding✅ */
