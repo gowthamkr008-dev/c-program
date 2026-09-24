@@ -7,6 +7,7 @@
 
 Status copy_bmp_header(FILE *fptr_src_image, FILE *fptr_dest_image){
 
+rewind(fptr_src_image);
 char data[54];
 fread(data,54,sizeof(char),fptr_src_image);
 

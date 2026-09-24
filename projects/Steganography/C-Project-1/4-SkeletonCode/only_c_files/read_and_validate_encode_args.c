@@ -11,7 +11,7 @@ Status read_and_validate_encode_args(char *argv[], EncodeInfo *encInfo){
        return e_failure;
   }
 
-  if(strstr(argv[3],".txt") ){
+  if(strstr(argv[3],".txt")  || strstr(argv[3],".csv") || strstr(argv[3],".pdf")){
     encInfo->secret_fname = argv[3];
   }else{
       return e_failure;

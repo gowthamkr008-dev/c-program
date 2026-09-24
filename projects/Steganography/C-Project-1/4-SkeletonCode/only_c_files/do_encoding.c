@@ -25,6 +25,14 @@ printf("orgimage name %s\nsecret msg image %s\n",encInfo->src_image_fname,encInf
   return e_failure;
 }
 
+
+
+if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) == e_success ){
+  printf("Reamining data copied\n");
+}else{
+  printf("Error in remaining data copy\n");
+  return e_failure;
+}
   /*
   src_image_fname
   secret_fname
