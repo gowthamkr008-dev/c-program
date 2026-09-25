@@ -36,6 +36,11 @@ if(encode_magic_string(magic_string, encInfo) == e_success){
   puts("Failed encoded magic string❌");
 }
 
+long int data = strlen(encInfo->extn_secret_file);
+    printf("data %ld\n",data);
+if(encode_secret_file_size(data, encInfo)== e_success){
+    puts ("encoded") ;
+}
 
 
 

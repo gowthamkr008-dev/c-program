@@ -5,7 +5,7 @@
 
 Status encode_magic_string(const char *magic_string, EncodeInfo *encInfo){
 
-  printf("Magic string %s\n",magic_string);
+  // printf("Magic string %s\n",magic_string);
 
   int len = strlen(magic_string);
   for(int i = 0;i<len;i++){
@@ -14,7 +14,7 @@ Status encode_magic_string(const char *magic_string, EncodeInfo *encInfo){
       puts("fail to encode");
       return e_failure;
     }else{
-     fwrite(encInfo->image_data,MAX_SECRET_BUF_SIZE*8,1,encInfo->fptr_stego_image);
+     fwrite(encInfo->image_data,7,1,encInfo->fptr_stego_image);
     }
   }
   return e_success;
