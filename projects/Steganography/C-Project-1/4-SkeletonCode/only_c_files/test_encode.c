@@ -7,44 +7,88 @@ int main( int arg,char *argv[])
     EncodeInfo encInfo;
     uint img_size;
 
+    /* not a proper argunment */
     if(arg < 4){
       printf("Error: Enter the  proper argument\n");
+      printf("./a.out -e/-d  <sourcefile> <secretfile> <optional>\n");
+      printf("-e => Do encoding\n-d => Do decoding\nSource file => what file need to encode\nsecretfile => what content you need to encode in file\noptional => output file name\n");
         return -1;
     }
-
-    if( check_operation_type(argv) == e_encode){
-        printf("Start Encoding\n");
-        if(read_and_validate_encode_args(argv,&encInfo) ==e_success){
-            /*
+    
+    /* check the operation type*/
+    switch (check_operation_type(argv) )
+    {
+    case e_encode: 
+    {
+         printf("Start Encoding\n");
+        /*user given valid file */
+        if(read_and_validate_encode_args(argv,&encInfo) ==e_success)
+        {
+             /*
             printf("source file name %s\n",encInfo.src_image_fname);
             printf("secrate file name %s\n",encInfo.secret_fname);
             printf("output file name %s\n\n",encInfo.stego_image_fname);
             */
-            if(open_files(&encInfo) == e_success){
-                printf("Do Encoding ✅\n");
-                if(do_encoding(&encInfo) == e_success){
-                    puts("Enocding completed ✅");
-                }else{
-                    puts("fail to decode ❌");
-                    return -1;
-                }
-            }else{
-                printf("Invalid file");
+
+            /* file opening */
+           if(open_files(&encInfo) == e_success)
+           {
+            printf("Do Encoding ✅\n");
+            /* start encoding */
+            if(do_encoding(&encInfo) == e_success)
+            {
+                puts("Enocding completed ✅");
+            }else
+            {
+                puts("fail to decode ❌");
                 return -1;
             }
-
-
-        }else{
-            printf("Invalid file\n");
+        }else
+        {
+            printf("Invalid file");
             return -1;
         }
-
-    }else if(check_operation_type(argv) == e_decode){
-        printf("Start Decoding\n");
-    }else{
-        printf("Invalid argunment\n");
+    }else
+    {
+        printf("Invalid file\n");
         return -1;
     }
+    }
+        break;
+
+    case e_decode:{
+        
+    printf("Start Decoding\n");
+    }
+    break;
+    
+    default:
+            printf("Invalid argunment\n");
+            return -1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -34,9 +34,6 @@ for(i =0;i<8;i++){
   /* set bit*/
   image_buffer[i] = clear|get;
 }
-
-  return e_success;
-}
 /*
 printf("Decoding\n");
 int res =0,digit;
@@ -49,6 +46,10 @@ printf("char %c\n",res);
 
 printf("\n\n");
 */
+
+
+  return e_success;
+}
 
 
 

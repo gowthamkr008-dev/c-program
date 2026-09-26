@@ -9,12 +9,12 @@ Status encode_magic_string(const char *magic_string, EncodeInfo *encInfo){
 
   int len = strlen(magic_string);
   for(int i = 0;i<len;i++){
-     fread(encInfo->image_data,7,1,encInfo->fptr_src_image);
+     fread(encInfo->image_data,8,sizeof(char),encInfo->fptr_src_image);
     if(encode_byte_to_lsb(magic_string[i], encInfo->image_data) ==  e_failure){
       puts("fail to encode");
       return e_failure;
     }else{
-     fwrite(encInfo->image_data,7,1,encInfo->fptr_stego_image);
+     fwrite(encInfo->image_data,8,sizeof(char),encInfo->fptr_stego_image);
     }
   }
   return e_success;

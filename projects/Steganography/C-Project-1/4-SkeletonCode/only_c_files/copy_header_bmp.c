@@ -7,11 +7,9 @@
 
 Status copy_bmp_header(FILE *fptr_src_image, FILE *fptr_dest_image){
 
-rewind(fptr_src_image);
-char data[54];
+  fseek(fptr_src_image,0,SEEK_SET);
+char data[55];
 fread(data,54,sizeof(char),fptr_src_image);
-
-
 fwrite(data,54,sizeof(char),fptr_dest_image);
 
 printf("Copied succesfully✅ \n");
