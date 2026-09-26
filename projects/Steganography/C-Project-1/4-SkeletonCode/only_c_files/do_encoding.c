@@ -44,12 +44,12 @@ if(encode_secret_file_size(data, encInfo)== e_success){
 
 
 
-// if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) == e_success ){
-//   printf("Reamining data copied\n");
-// }else{
-//   printf("Error in remaining data copy\n");
-//   return e_failure;
-// }
+if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) == e_success ){
+  printf("Reamining data copied\n");
+}else{
+  printf("Error in remaining data copy\n");
+  return e_failure;
+}
  
   
 

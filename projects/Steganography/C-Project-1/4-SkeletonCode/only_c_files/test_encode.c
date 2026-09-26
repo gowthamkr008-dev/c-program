@@ -1,26 +1,39 @@
 #include <stdio.h>
+#include <string.h>
 #include "encode.h"
+#include "decode.h"
 #include "types.h"
 
 int main( int arg,char *argv[])
 {
-    EncodeInfo encInfo;
+    
+  
     uint img_size;
 
-    /* not a proper argunment */
-    if(arg < 4){
-      printf("Error: Enter the  proper argument\n");
+    if(check_operation_type(argv) == e_encode ){
+        if(arg <4){
+             printf("Error: Enter the  proper argument\n");
       printf("./a.out -e/-d  <sourcefile> <secretfile> <optional>\n");
-      printf("-e => Do encoding\n-d => Do decoding\nSource file => what file need to encode\nsecretfile => what content you need to encode in file\noptional => output file name\n");
+     printf("-e => Do encoding\nsourcefile => which file you need to encode\nsecret file =>secret data present file\noptional =>require output file name\n");
+     printf("-d => do Decoding\nSource file => which file you need to decode\noptional => output data file name\n");
         return -1;
+        }
+    }else{
+        if(arg <3){
+             printf("Error: Enter the  proper argument\n");
+      printf("./a.out -e/-d  <sourcefile> <secretfile> <optional>\n");
+      printf("-e => Do encoding\nsourcefile => which file you need to encode\nsecret file =>secret data present file\noptional =>require output file name\n");
+     printf("-d => do Decoding\nSource file => which file you need to decode\noptional => output data file name\n");
+         return -1;
+        }
     }
-    
-    /* check the operation type*/
+       /* check the operation type*/
     switch (check_operation_type(argv) )
     {
     case e_encode: 
     {
          printf("Start Encoding\n");
+         EncodeInfo encInfo;
         /*user given valid file */
         if(read_and_validate_encode_args(argv,&encInfo) ==e_success)
         {
@@ -59,7 +72,26 @@ int main( int arg,char *argv[])
     case e_decode:{
         
     printf("Start Decoding\n");
+      DecodeInfo decInfo;
+    if(read_and_validate_decode_args (argv,&decInfo) == e_success ){
+        puts("Valid file ✅");
+        printf("%s\n",decInfo.src_image_fname);
+        printf("%s\n ",decInfo.data_fname);
+        if(open_file_decoding (&decInfo) == e_success){
+            puts("Succesfully file open");
+            if(do_decoding(&decInfo)== e_success){
+                puts("Decode completed");
+            }else{
+                puts("Fail to decoding");
+            }
+        }else{
+            puts("Fail opening file");
+        }
+    }else{
+        printf("Invalid file format\n");
+        return -1;
     }
+}
     break;
     
     default:
@@ -67,41 +99,8 @@ int main( int arg,char *argv[])
             return -1;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return 0;
+}
 
 
     /*
@@ -126,7 +125,3 @@ int main( int arg,char *argv[])
     printf("INFO: Image size = %u\n", img_size);
 
     */
-
-
-    return 0;
-}

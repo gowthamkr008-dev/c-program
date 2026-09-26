@@ -1,3 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+#include"types.h"
+#include"common.h"
+#include "decode.h"
+
+
+Status do_decoding(DecodeInfo *decInfo){
+  fseek(decInfo->fptr_src_image,54,SEEK_CUR);
+  // printf("file pointer %ld\n ",ftell(decInfo->fptr_src_image));
+
+  /*decode magic string*/
+  char magicstring[4];
+  if(decode_magic_string(magicstring,decInfo)== e_success){
+    if(strcmp(magicstring,MAGIC_STRING) == 0){
+      printf("Secrat data present\n");
+    }else{
+      printf("No secret data data present\n");
+      return e_failure;
+    }
+  }else{
+    printf("Fail to decode\n");
+    return e_failure;
+  }
+
+  /* decode size of extension */
+  int ext_size;
+  if(decode_size_to_ext (&ext_size,decInfo->fptr_src_image) == e_success){
+    char ext[ext_size];
+  }else{
+    printf("Fail to decode\n");
+    return e_failure;
+  }
+
+
+  return e_success;
+}
+
+
 /*
 read and validate
 
