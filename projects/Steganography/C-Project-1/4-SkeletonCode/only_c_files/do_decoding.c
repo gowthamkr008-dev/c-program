@@ -28,13 +28,21 @@ Status do_decoding(DecodeInfo *decInfo){
   if(decode_size_to_ext (&ext_size,decInfo) == e_success){
     printf("size of extension %d\n",ext_size);
     char ext[ext_size];
-    printf("extrace file");
+    printf("ectract file extension\n");
     if(decode_file_extern(ext,decInfo,ext_size)==e_success ){
       printf("%s\n",ext);
-
     }
   }else{
     printf("Fail to decode\n");
+    return e_failure;
+  }
+
+
+  int size_data;
+  if(decode_size_to_ext (&size_data,decInfo)== e_success){
+    printf("decoded size : %d\n",size_data);
+    char data[size_data];
+  }else{
     return e_failure;
   }
 

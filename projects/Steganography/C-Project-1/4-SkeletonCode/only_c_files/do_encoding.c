@@ -54,12 +54,19 @@ if(encode_secret_file_extn (encInfo->extn_secret_file,encInfo)==e_success){
 }
 // printf("size of data%ld\n",encInfo->size_secret_file);
 
-if(encode_secret_file_size(encInfo->size_secret_file, encInfo)== e_success){
+if(encode_secret_data_size(encInfo->size_secret_file, encInfo)== e_success){
     puts ("data size encoded ") ;
 }else{
   return e_failure;
 }
 
+char secdata[encInfo->size_secret_file+1];
+fread(secdata,encInfo->size_secret_file,sizeof(char),encInfo->fptr_secret);
+secdata[encInfo->size_secret_file] = '\0';
+printf("%s\n",secdata);
+if(encode_secret_file_data(encInfo,secdata) ==e_success){
+  printf("Data encoded\n");
+}
 
 if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) == e_success ){
   printf("Reamining data copied\n");

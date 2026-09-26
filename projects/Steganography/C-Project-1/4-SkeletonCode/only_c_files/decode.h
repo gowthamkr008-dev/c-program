@@ -37,9 +37,11 @@ Status decode_magic_string(char *str,DecodeInfo * DecInfo);
 Status decode_size_to_ext(int *num, DecodeInfo * decInfo);
 
 /* decode a byte into LSB of image data array */
+/* use for all decoding char*/
 Status decode_byte_to_lsb(char *ch,char * imgdata);
 
 /* use to decode integer*/
+/*use for all decoding size*/
 Status decode_size_to_lsb(int * data,char * img_buff);
 
 Status decode_file_extern(char * file_extern,DecodeInfo * DecodeInfo,int size_extern);
