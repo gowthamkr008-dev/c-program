@@ -6,122 +6,99 @@
 
 int main( int arg,char *argv[])
 {
-    
-  
     uint img_size;
-
     if(check_operation_type(argv) == e_encode ){
         if(arg <4){
-             printf("Error: Enter the  proper argument\n");
-      printf("./a.out -e/-d  <sourcefile> <secretfile> <optional>\n");
-     printf("-e => Do encoding\nsourcefile => which file you need to encode\nsecret file =>secret data present file\noptional =>require output file name\n");
-     printf("-d => do Decoding\nSource file => which file you need to decode\noptional => output data file name\n");
-        return -1;
+            printf("Error: Enter the  proper argument\n");
+            printf("./a.out -e/-d  <sourcefile> <secretfile> <optional>\n");
+            printf("-e => Do encoding\nsourcefile => which file you need to encode\nsecret file =>secret data present file\noptional =>require output file name\n");
+            printf("-d => do Decoding\nSource file => which file you need to decode\noptional => output data file name\n");
+            return -1;
         }
-    }else{
-        if(arg <3){
-             printf("Error: Enter the  proper argument\n");
-      printf("./a.out -e/-d  <sourcefile> <secretfile> <optional>\n");
-      printf("-e => Do encoding\nsourcefile => which file you need to encode\nsecret file =>secret data present file\noptional =>require output file name\n");
-     printf("-d => do Decoding\nSource file => which file you need to decode\noptional => output data file name\n");
-         return -1;
+    }else if(check_operation_type(argv) == e_decode) {
+        if(arg < 3){
+            printf("Error: Enter the  proper argument\n");
+            printf("./a.out -e/-d  <sourcefile> <secretfile> <optional>\n");
+            printf("-e => Do encoding\nsourcefile => which file you need to encode\nsecret file =>secret data present file\noptional =>require output file name\n");
+            printf("-d => do Decoding\nSource file => which file you need to decode\noptional => output data file name\n");
+            return -1;
         }
     }
-       /* check the operation type*/
+    /* check the operation type*/
     switch (check_operation_type(argv) )
     {
-    case e_encode: 
-    {
-         printf("Start Encoding\n");
-         EncodeInfo encInfo;
-        /*user given valid file */
-        if(read_and_validate_encode_args(argv,&encInfo) ==e_success)
+        case e_encode: 
         {
-             /*
-            printf("source file name %s\n",encInfo.src_image_fname);
-            printf("secrate file name %s\n",encInfo.secret_fname);
-            printf("output file name %s\n\n",encInfo.stego_image_fname);
-            */
-
-            /* file opening */
-           if(open_files(&encInfo) == e_success)
-           {
-            printf("Do Encoding ✅\n");
-            /* start encoding */
-            if(do_encoding(&encInfo) == e_success)
+            printf("Start Encoding\n");
+            EncodeInfo encInfo;
+            /*user given valid file */
+            if(read_and_validate_encode_args(argv,&encInfo) ==e_success)
             {
-                puts("Enocding completed ✅");
+                /*
+                printf("source file name %s\n",encInfo.src_image_fname);
+                printf("secrate file name %s\n",encInfo.secret_fname);
+                printf("output file name %s\n\n",encInfo.stego_image_fname);
+                */
+               /* file opening */
+               if(open_files(&encInfo) == e_success)
+               {
+                printf("Do Encoding ✅\n");
+                /* start encoding */
+                if(do_encoding(&encInfo) == e_success)
+                {
+                    puts("Enocding completed ✅");
+                }else
+                {
+                    puts("fail to decode ❌");
+                    return -1;
+                }
             }else
             {
-                puts("fail to decode ❌");
+                printf("Invalid file");
                 return -1;
             }
         }else
         {
-            printf("Invalid file");
+            printf("Invalid file\n");
             return -1;
         }
-    }else
+    }
+    break;
+    
+    case e_decode:
     {
-        printf("Invalid file\n");
-        return -1;
-    }
-    }
-        break;
-
-    case e_decode:{
-        
-    printf("Start Decoding\n");
-      DecodeInfo decInfo;
-    if(read_and_validate_decode_args (argv,&decInfo) == e_success ){
-        puts("Valid file ✅");
-        printf("%s\n",decInfo.src_image_fname);
-        printf("%s\n ",decInfo.data_fname);
-        if(open_file_decoding (&decInfo) == e_success){
-            puts("Succesfully file open");
-            if(do_decoding(&decInfo)== e_success){
-                puts("Decode completed");
-            }else{
-                puts("Fail to decoding");
+        printf("Start Decoding\n");
+        DecodeInfo decInfo;
+        if(read_and_validate_decode_args (argv,&decInfo) == e_success )
+        {
+            puts("Valid file ✅");
+            printf("%s\n",decInfo.src_image_fname);
+            printf("%s\n ",decInfo.data_fname);
+            if(open_file_decoding (&decInfo) == e_success)
+            {
+                puts("Succesfully file open");
+                if(do_decoding(&decInfo)== e_success)
+                {
+                    puts("Decode completed");
+                }else
+                {
+                    puts("Fail to decoding");
+                }
+            }else
+            {
+                puts("Fail opening file");
             }
-        }else{
-            puts("Fail opening file");
+        }else
+        {
+            printf("Invalid file format\n");
+            return -1;
         }
-    }else{
-        printf("Invalid file format\n");
-        return -1;
     }
-}
     break;
     
     default:
-            printf("Invalid argunment\n");
-            return -1;
-    }
-
-    return 0;
+    printf("Invalid argunment\n");
+    return -1;
 }
-
-
-    /*
-    // Fill with sample filenames
-    encInfo.src_image_fname = "beautiful.bmp";
-    encInfo.secret_fname = "secret.txt";
-    encInfo.stego_image_fname = "stego_img.bmp";
-
-    // Test open_files
-    if (open_files(&encInfo) == e_failure)
-    {
-    	printf("ERROR: %s function failed\n", "open_files" );
-    	return 1;
-    }
-    else
-    {
-    	printf("SUCCESS: %s function completed\n", "open_files" );
-    }
-
-    // Test get_image_size_for_bmp
-    img_size = get_image_size_for_bmp(encInfo.fptr_src_image);
-    printf("INFO: Image size = %u\n", img_size);
-
-    */
+return 0;
+}

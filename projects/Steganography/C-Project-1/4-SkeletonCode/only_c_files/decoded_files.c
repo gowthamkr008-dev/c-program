@@ -3,11 +3,8 @@
 #include"types.h"
 #include"decode.h"
 
-
+/* decode magic srting*/
 Status decode_magic_string(char *str,DecodeInfo * decInfo){
-
-
- 
   for(int i=0;i<2;i++){
   fread(decInfo->image_data,8,sizeof(char),decInfo->fptr_src_image);
   char ch;
@@ -26,7 +23,7 @@ Status decode_magic_string(char *str,DecodeInfo * decInfo){
 }
 
 
-
+/*decode the length of ectension*/
 Status decode_size_to_ext(int *num,DecodeInfo * decInfo){
   char img_buff[33];
   fread(img_buff,32,sizeof(char),decInfo->fptr_src_image);
@@ -42,11 +39,8 @@ Status decode_size_to_ext(int *num,DecodeInfo * decInfo){
 
 
 
-
+/* decode the file extension */
 Status decode_file_extern(char * file_extern,DecodeInfo * DecInfo,int size_extern){
-
-  
-
   char ext[size_extern];
   int i;
   for( i = 0;i<size_extern;i++){
@@ -66,4 +60,24 @@ strcpy(file_extern,ext);
 
 
   return e_success;
+}
+
+
+/* decode the secret data */
+Status decode_secret_data(DecodeInfo * decInfo,int size){
+ printf("Merged file in data decode %s %d\n",decInfo->data_fname,size);
+int i;
+char ch;
+for(i = 0;i < size;i++){
+  fread(decInfo->image_data,8,sizeof(char),decInfo->fptr_src_image);
+  if(decode_byte_to_lsb(&ch,decInfo->image_data) == e_success){
+    printf("%c",ch);
+    fwrite(&ch,1,sizeof(char),decInfo->fptr_data);
+  }
+}
+
+
+
+
+ return e_success;
 }

@@ -8,10 +8,5 @@ Status open_file_decoding(DecodeInfo *decInfo){
     perror("Error ");
     return e_failure;
   }
-  decInfo->fptr_data = fopen(decInfo->data_fname,"w");
-  if(decInfo->fptr_data == NULL){
-    perror("Error");
-    return e_failure;
-  }
   return e_success;
 }

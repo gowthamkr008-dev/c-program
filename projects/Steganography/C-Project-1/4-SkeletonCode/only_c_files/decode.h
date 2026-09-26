@@ -44,4 +44,12 @@ Status decode_byte_to_lsb(char *ch,char * imgdata);
 /*use for all decoding size*/
 Status decode_size_to_lsb(int * data,char * img_buff);
 
+/* decode the file extension*/
 Status decode_file_extern(char * file_extern,DecodeInfo * DecodeInfo,int size_extern);
+
+/* decode the secret data */
+Status decode_secret_data(DecodeInfo * DecodeInfo,int size);
+/*
+
+
+*/
