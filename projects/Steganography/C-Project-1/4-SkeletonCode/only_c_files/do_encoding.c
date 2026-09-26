@@ -40,8 +40,25 @@ long int data = strlen(encInfo->extn_secret_file);
     printf("data %ld\n",data);
 if(encode_secret_file_size(data, encInfo)== e_success){
     puts ("encoded") ;
+}else{
+  return e_failure;
 }
 
+
+printf("\n\n%s\n\n",encInfo->extn_secret_file);
+
+if(encode_secret_file_extn (encInfo->extn_secret_file,encInfo)==e_success){
+  puts("extension encoded");
+}else{
+  return e_failure;
+}
+// printf("size of data%ld\n",encInfo->size_secret_file);
+
+if(encode_secret_file_size(encInfo->size_secret_file, encInfo)== e_success){
+    puts ("data size encoded ") ;
+}else{
+  return e_failure;
+}
 
 
 if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) == e_success ){
@@ -50,6 +67,9 @@ if(copy_remaining_img_data(encInfo->fptr_src_image,encInfo->fptr_stego_image) ==
   printf("Error in remaining data copy\n");
   return e_failure;
 }
+
+printf("extension %s\n",encInfo->extn_secret_file);
+// if(encode_secret_file_extn()  )
  
   
 
